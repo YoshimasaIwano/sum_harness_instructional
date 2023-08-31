@@ -31,12 +31,28 @@ To build and run this code, you need to have the following software tools instal
 
 # Default build instructions:
 
+Change the directory that contains the source files and CMakeLists.txt file  
+```
+cd sum_harness_instructional
+```
+ 
+```
+mkdir build
+``` 
 
-`% cd sum_harness_instructional`     # contains the source files and CMakeLists.txt file  
-`% mkdir build`  
-`% cd build`  
-`% cmake ../`           # cmake generates lots of output   
-`% make`                # to build the programs  
+```
+cd build
+```
+
+Cmake generates lots of output   
+```
+cmake ../
+```
+
+To build the programs 
+```
+make
+```                 
 
 # Additional build options -- Compiler Optimization Level
 
@@ -48,15 +64,23 @@ Option 1 (best approach): set the CMAKE_CXX_FLAGS_RELEASE environment variable t
 
 For full optimization:  
  bash users:  
- % export CMAKE_CXX_FLAGS_RELEASE="-O3"  
+ ```
+ export CMAKE_CXX_FLAGS_RELEASE="-O3"
+```  
  csh users:  
- % setenv CMAKE_CXX_FLAGS_RELEASE "-O3"  
+ ```
+setenv CMAKE_CXX_FLAGS_RELEASE "-O3"
+```  
 
 For no optimization:  
  bash users:  
- % export CMAKE_CXX_FLAGS_RELEASE="-O0"  
+ ```
+ export CMAKE_CXX_FLAGS_RELEASE="-O0"
+```  
  csh users:  
- % setenv CMAKE_CXX_FLAGS_RELEASE "-O0"  
+ ```
+setenv CMAKE_CXX_FLAGS_RELEASE "-O0"
+```  
 
  Then, after setting the CMAKE_CXX_FLAGS_RELEASE environment variable, clean your build directory, and rerun cmake and then make.
 
@@ -85,15 +109,21 @@ You will need to add code in three places:
 
 Once the codes are built, you should be able to just run each one from the command line:
 
-`% ./sum_direct`
+```
+./sum_direct
+```
 
 or 
 
-`% ./sum_indirect`
+```
+./sum_indirect
+```
 
 or
 
-`% ./sum_vector`
+```
+./sum_vector
+```
 
 When you run each code, it will iterate through the set of problem sizes predefined inside benchmark.cpp
 
@@ -105,19 +135,29 @@ After [logging in to perlmutter at NERSC,](https://docs.nersc.gov/systems/perlmu
 
 Set up your environment to make use of the CPU nodes by typing in this command:
 
-`% module load cpu`
+```
+module load cpu
+```
 
 Then follow the build instructions above.
 
 Once you have built the codes, you may request interactive access to a Perlmutter CPU node by using this command:
 
-`% salloc --nodes 1 --qos interactive --time 00:30:00 --constraint cpu --account=m3930`
+```
+salloc --nodes 1 --qos interactive --time 00:30:00 --constraint cpu --account=m3930
+```
 
 Once you are on an interactive CPU node, run each of the codes using these commands:
 
-`srun ./sum_direct`
-`srun ./sum_indirect`
-`srun ./sum_vector`
+```
+srun ./sum_direct
+```
+```
+srun ./sum_indirect
+```
+```
+srun ./sum_vector
+```
 
 
 # Building and running the codes on Cori@NERSC (deprecated as of March 2023)
