@@ -14,6 +14,7 @@
 #include <vector>
 #include <string.h>
 
+#define FLOP_PER_ELEM 2 
 
 extern void setup(int64_t N, uint64_t A[]);
 extern int64_t sum(int64_t N, uint64_t A[]);
@@ -49,7 +50,15 @@ int main(int argc, char** argv)
 
       std::chrono::duration<double> elapsed = end_time - start_time;
 
+      double time_sec = elapsed.count();
+      double flops = n * FLOP_PER_ELEM / time_sec;
+      double bandwidth = n * sizeof(uint64_t) / time_sec;
+      double latency = time_sec / n;
+
       printf(" Elapsed time = %f seconds \n", elapsed.count());
+      printf(" MFLOP/s: %.3lf\n", flops/1e6);
+      printf(" Bandwidth utilization (GB/s): %.3lf\n", bandwidth/1e9);
+      printf(" Estimated memory latency (sec): %.3lfe-9\n", latency*1e9);
 
       printf(" Sum result = %lld \n",t);
 
