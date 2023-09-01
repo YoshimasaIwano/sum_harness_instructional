@@ -25,7 +25,6 @@ sum(int64_t N, uint64_t A[])
       sum += i;
    }
 
-   printf(" Sum result = %lld \n",sum);
    return sum;
 }
 
