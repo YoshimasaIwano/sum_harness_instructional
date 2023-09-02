@@ -14,9 +14,9 @@
 #include <vector>
 #include <string.h>
 
-#define FLOP_PER_ELEM 1 
+#define OPERATION_PER_SUM 1 
 #define PEAK_BANDWIDTH 68.25e9 // 68 GB/s
-#define NUM_MEMORY_ACCESSES 0
+#define NUM_MEMORY_ACCESSES 1
 
 extern void setup(int64_t N, uint64_t A[]);
 extern int64_t sum(int64_t N, uint64_t A[]);
@@ -53,8 +53,8 @@ int main(int argc, char** argv)
       std::chrono::duration<double> elapsed = end_time - start_time;
 
       double time_sec = elapsed.count();
-      double mflops = n * FLOP_PER_ELEM / time_sec;
-      double bandwidth_usage = (NUM_MEMORY_ACCESSES * sizeof(uint64_t) / time_sec) / PEAK_BANDWIDTH;
+      double mflops = n * OPERATION_PER_SUM / time_sec;
+      double bandwidth_usage = (n * NUM_MEMORY_ACCESSES * sizeof(uint64_t) / time_sec) / PEAK_BANDWIDTH;
       double latency = NUM_MEMORY_ACCESSES ? time_sec / NUM_MEMORY_ACCESSES : 0;
 
       printf(" Elapsed time = %f seconds \n", elapsed.count());
