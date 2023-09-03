@@ -15,7 +15,7 @@
 #include <string.h>
 
 #define OPERATION_PER_SUM 1 
-#define PEAK_BANDWIDTH 68.25e9 // 68 GB/s
+#define PEAK_BANDWIDTH 204.8e9 // 68 GB/s: Mac and 204.8 GB/s: NERSC 
 #define NUM_MEMORY_ACCESSES 1
 
 extern void setup(int64_t N, uint64_t A[]);
@@ -60,7 +60,7 @@ int main(int argc, char** argv)
       printf(" Elapsed time = %f seconds \n", elapsed.count());
       printf(" MFLOP/s: %.3lf\n", mflops/1e6);
       printf(" Bandwidth utilization (%%): %.3lf\n", bandwidth_usage*100);
-      printf(" Estimated memory latency (sec): %.3lfe-9\n", latency);
+      printf(" Estimated memory latency (sec): %.3lf\n", latency);
 
       printf(" Sum result = %lld \n",t);
       printf(" \n");
