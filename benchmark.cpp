@@ -60,7 +60,7 @@ int main(int argc, char** argv)
       printf(" Elapsed time = %f seconds \n", elapsed.count());
       printf(" MFLOP/s: %.3lf\n", mflops/1e6);
       printf(" Bandwidth utilization (%%): %.3lf\n", bandwidth_usage*100);
-      printf(" Estimated memory latency (sec): %.3lfe\n", latency);
+      printf(" Estimated memory latency (sec): %.3lf\n", latency);
 
       printf(" Sum result = %lld \n",t);
       printf(" \n");
