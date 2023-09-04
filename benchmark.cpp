@@ -15,7 +15,7 @@
 #include <string.h>
 
 
-#define FLOP_PER_ELEM 1 
+#define FLOP_PER_ELEM 2 
 #define PEAK_BANDWIDTH 204.8e9 // 68 GB/s: Mac and 204.8 GB/s: NERSC 
 #define NUM_MEMORY_ACCESSES 1
 
