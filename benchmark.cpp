@@ -19,6 +19,7 @@
 #define PEAK_BANDWIDTH 204.8e9 // 68 GB/s: Mac and 204.8 GB/s: NERSC 
 #define NUM_MEMORY_ACCESSES 0
 
+
 extern void setup(int64_t N, uint64_t A[]);
 extern int64_t sum(int64_t N, uint64_t A[]);
 
