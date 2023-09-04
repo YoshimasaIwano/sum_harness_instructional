@@ -17,7 +17,7 @@
 
 #define FLOP_PER_ELEM 1 
 #define PEAK_BANDWIDTH 204.8e9 // 68 GB/s: Mac and 204.8 GB/s: NERSC 
-#define NUM_MEMORY_ACCESSES 0
+#define NUM_MEMORY_ACCESSES 1
 
 
 extern void setup(int64_t N, uint64_t A[]);
