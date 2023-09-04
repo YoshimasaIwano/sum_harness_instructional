@@ -1,0 +1,9 @@
+# author: E. Wes Bethel, Oct 2022
+# sample data for use with the plot_3vars_Memory_latency.py file
+Problem Size,Direct Sum,Vector Sum,Indirect Sum
+8388608,0,2.00E-03,2.00E-03
+16777216,0,5.00E-03,5.00E-03
+33554432,0,9.00E-03,9.00E-03
+67108864,0,1.80E-02,1.80E-02
+134217728,0,3.60E-02,3.50E-02
+268435456,0,6.90E-02,6.70E-02

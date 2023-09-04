@@ -1,0 +1,9 @@
+# author: E. Wes Bethel, Oct 2022
+# sample data for use with the plot_3vars_Memory_bandwidth.py file
+Problem Size,Direct Sum,Vector Sum,Indirect Sum
+8388608,0,14.019,13.971
+16777216,0,14.233,14.413
+33554432,0,14.411,14.684
+67108864,0,14.455,14.749
+134217728,0,14.753,15.039
+268435456,0,15.261,15.552
