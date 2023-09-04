@@ -6,7 +6,7 @@ October 2022
 
 Description: This code loads a .csv file and creates a 3-variable plot
 
-Inputs: the named file "sample_data_3vars.csv"
+Inputs: the named file "sample_data_3vars_Memory_bandwidth.csv"
 
 Outputs: displays a chart with matplotlib
 
@@ -20,7 +20,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
-fname = "sample_data_3vars.csv"
+fname = "sample_data_3vars_Memory_bandwidth.csv"
 df = pd.read_csv(fname, comment="#")
 print(df)
 
@@ -36,7 +36,7 @@ code1_time = df[var_names[1]].values.tolist()
 code2_time = df[var_names[2]].values.tolist()
 code3_time = df[var_names[3]].values.tolist()
 
-plt.title("Comparison of 3 Codes")
+plt.title("Comparison of 3 different ways of computing a sum")
 
 xlocs = [i for i in range(len(problem_sizes))]
 
@@ -53,11 +53,11 @@ plt.plot(code1_time, "r-o")
 plt.plot(code2_time, "b-x")
 plt.plot(code3_time, "g-^")
 
-#plt.xscale("log")
+# plt.xscale("log")
 #plt.yscale("log")
 
 plt.xlabel("Problem Sizes")
-plt.ylabel("runtime")
+plt.ylabel("Memory bandwidth (%)")
 
 varNames = [var_names[1], var_names[2], var_names[3]]
 plt.legend(varNames, loc="best")
